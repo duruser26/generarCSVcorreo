@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="generarcsvcontacts.ControladorEventosCSVContactos" prefWidth="500" prefHeight="200">
+    <top>
+        <Label text="Generador CSV contactos Google" BorderPane.alignment="CENTER"
+               style="-fx-font-size: 16px; -fx-padding: 10;" />
+    </top>
+    <center>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Fila 1: Ruta CSV -->
+            <TextField fx:id="csvPathField" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="250"/>
+            <Button text="Elegir CSV" fx:id="xlsxButton" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <!-- Fila 2: Ruta salida CSV -->
+            <TextField fx:id="csvOutputPathField" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="250"/>
+            <Button text="Elegir ruta salida CSV" fx:id="csvPathButton" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <!-- Fila 3: Nombre de archivo y botón -->
+            <TextField fx:id="fileNameField" promptText="Nombre del archivo"
+                       GridPane.columnIndex="0" GridPane.rowIndex="2" prefWidth="250"/>
+            <Button text="Generar CSV" fx:id="generarCsvButton" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+    </center>
+</BorderPane>

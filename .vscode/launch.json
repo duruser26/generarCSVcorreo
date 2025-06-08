@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "AppGenerarCSVContactos",
+            "request": "launch",
+            "mainClass": "generarcsvcontacts.AppGenerarCSVContactos",
+            "projectName": "generarCSVcorreo_f54e190e",
+            "vmArgs": "--module-path C:\\Users\\Usu2S\\Documents\\JAVA\\generarCSVcorreo\\javafx-sdk-21.0.7\\lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}

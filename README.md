@@ -1,18 +1,18 @@
-## Getting Started
+## Función principal
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Programa que genera un CSV a partir de un CSV específico de la empresa Alquiler Vacacional. Es información de huéspedes.
+El programa permite crear un formato CSV especifico para contactos y su reconocimiento interno en la empresa.
+Este programa trata de ser portable sin que se tenga que instalar nada en otro ordenador.
 
-## Folder Structure
+## Estructura
 
-The workspace contains two folders by default, where:
+DAO con interfaz que genera una lista del objeto huésped. Dentro del propio DAO reconvierte la fecha de entrada al formato específico interno yy/mm/dd.
+El resto de información relevante para el CSV de Google Contacts.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+> Formato ULTRA ESPECÍFICO.
 
 ## Dependency Management
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Dependencias:
+> JavaFX
+> JRE para ejecutar el .exe que se genera de la compilación (con otro programa) en otro ordenador sin necesidad de instalar nada.

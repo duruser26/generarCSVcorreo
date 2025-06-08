@@ -9,10 +9,13 @@ import java.util.List;
 
 public class DAOHuesped implements IDAOHuesped {
     
-    private File xslxHuespedes;
+    private File csvHuespedes;
 
-    public DAOHuesped(File archivoHuespedes) {
-        this.xslxHuespedes = archivoHuespedes;
+    public DAOHuesped(File archivoHuespedes) throws ErrorDAO {
+        if (!archivoHuespedes.exists()) {
+            throw new ErrorDAO("El archivo no existe: " + archivoHuespedes.getAbsolutePath());
+        }
+        this.csvHuespedes = archivoHuespedes;
     }
 
     // Devuelve una fecha en formato yymmdd a partir de dd/MM/yyyy en una sola línea
@@ -23,7 +26,7 @@ public class DAOHuesped implements IDAOHuesped {
     @Override
     public List<Huesped> obtenerHuespedes() throws ErrorDAO {
         List<Huesped> listaHuespedes = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(this.xslxHuespedes))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(this.csvHuespedes))) {
             String linea;
             br.readLine(); // Saltar la cabecera
             while ((linea = br.readLine()) != null) {
@@ -38,7 +41,7 @@ public class DAOHuesped implements IDAOHuesped {
                 }
             }
         } catch (IOException e) {
-            throw new ErrorDAO("Error al cargar los huéspedes desde el archivo: " + xslxHuespedes.getAbsolutePath());
+            throw new ErrorDAO("Error al cargar los huéspedes desde el archivo: " + csvHuespedes.getAbsolutePath());
         }
         return listaHuespedes;
     }
